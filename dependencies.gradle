@@ -1,0 +1,51 @@
+ext {
+    androidMinSdkVersion = 15
+    androidCompileSdkVersion = 28
+    androidTargetSdkVersion = 28
+
+    autoGsonVersion = '0.4.6'
+    autoValueVersion = '1.3'
+    autoParcelVersion = '0.2.5'
+    daggerVersion = 2.19
+    rxJavaVersion = '2.2.3' // https://github.com/ReactiveX/RxJava
+    rxAndroidVersion = '2.1.0' // https://github.com/ReactiveX/RxAndroid
+    gsonVersion = '2.8.5' // https://github.com/google/gson
+    okHttpVersion = '3.11.0' // https://github.com/square/okhttp
+    retrofitVersion = '2.4.0' // https://github.com/square/retrofit
+    picassoVersion = '2.5.2'
+    androidSupportVersion = '28.0.0'
+    supportMultidexVersion =  '1.0.3'
+    //Testing
+    jUnitVersion = '4.12'
+    mockitoVersion = '2.19.0'
+    powerMockVersion = '2.0.0-beta.5'
+
+    appDependencies = [
+            supportMultidex             : "com.android.support:multidex:${supportMultidexVersion}",
+            daggerCompiler               : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                       : "com.google.dagger:dagger:${daggerVersion}",
+            autoValueProvided            : "com.google.auto.value:auto-value:${autoValueVersion}",
+            autoValueParcel              : "com.ryanharter.auto.value:auto-value-parcel:${autoParcelVersion}",
+            autoGson                     : "com.ryanharter.auto.value:auto-value-gson:${autoGsonVersion}",
+            autoGsonProvided             : "com.ryanharter.auto.value:auto-value-gson:${autoGsonVersion}",
+            gson                         : "com.google.code.gson:gson:${gsonVersion}",
+            retrofit                     : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            rxJava                       : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid                    : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            picasso                      : "com.squareup.picasso:picasso:${picassoVersion}",
+            retrofitConverterGson        : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitRxjavaAdapter     : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+
+
+            jUnit                        : "junit:junit:${jUnitVersion}",
+            mockito                      : "org.mockito:mockito-core:${mockitoVersion}",
+            powerMock                    : "org.powermock:powermock-module-junit4:${powerMockVersion}",
+
+            androidSupportV4             : "com.android.support:support-v4:${androidSupportVersion}",
+            androidSupportCardViewV7     : "com.android.support:cardview-v7:${androidSupportVersion}",
+            androidSupportDesign         : "com.android.support:design:${androidSupportVersion}",
+            androidSupportGridLayoutV7   : "com.android.support:gridlayout-v7:${androidSupportVersion}",
+            androidSupportAppcompatV7    : "com.android.support:appcompat-v7:${androidSupportVersion}",
+    ]
+}
+

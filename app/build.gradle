@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android androidConfiguration
+
+android {
+    flavorDimensions "default"
+
+    defaultConfig {
+
+        applicationId "com.example.mytestapplication"
+        buildConfigField "String", "API_KEY", "\"3e7cc266ae2b0e0d78e279ce8e361736\""
+        buildConfigField "String", "BASE_URL", "\"https://api.flickr.com/services/\""
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+
+
+}
+
+
+
+dependencies {
+    def dependencies = rootProject.ext.appDependencies
+    implementation project(path: ':utils')
+    implementation dependencies.androidSupportV4
+    implementation dependencies.androidSupportCardViewV7
+    implementation dependencies.androidSupportDesign
+    annotationProcessor dependencies.daggerCompiler
+    implementation dependencies.dagger
+    implementation dependencies.autoValueProvided
+    annotationProcessor dependencies.autoValueProvided
+    implementation dependencies.autoValueParcel
+    annotationProcessor dependencies.autoValueParcel
+    implementation dependencies.autoGson
+    annotationProcessor dependencies.autoGson
+    implementation dependencies.autoGsonProvided
+    implementation dependencies.gson
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+    implementation dependencies.picasso
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverterGson
+    implementation dependencies.retrofitRxjavaAdapter
+    implementation dependencies.supportMultidex
+
+    testImplementation dependencies.jUnit
+    testImplementation dependencies.mockito
+    testImplementation dependencies.powerMock
+}

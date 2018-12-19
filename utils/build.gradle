@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android androidConfiguration
+android {
+
+    defaultConfig {
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+
+}
+
+dependencies {
+    def dependencies = rootProject.ext.appDependencies
+    implementation dependencies.autoValueProvided
+    annotationProcessor dependencies.autoValueProvided
+    implementation dependencies.autoValueParcel
+    annotationProcessor dependencies.autoValueParcel
+    implementation dependencies.autoGson
+    annotationProcessor dependencies.autoGson
+    implementation dependencies.autoGsonProvided
+    implementation dependencies.gson
+    implementation dependencies.androidSupportAppcompatV7
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitConverterGson
+    implementation dependencies.retrofitRxjavaAdapter
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
